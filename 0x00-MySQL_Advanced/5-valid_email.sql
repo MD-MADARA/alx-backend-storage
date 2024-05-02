@@ -5,9 +5,9 @@ CREATE TRIGGER email_validation
 BEFORE UPDATE ON users
 FOR EACH ROW
 BEGIN
-    UPDATE users
-    SET email_validation = 0
-    WHERE NEW.email != OLD.email;
+    IF NEW.email != OLD.email thEN
+        SET NEW.valid_email = 0;
+    END IF;
 END;
 //
 DELIMITER ;
