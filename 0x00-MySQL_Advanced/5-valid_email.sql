@@ -7,7 +7,7 @@ FOR EACH ROW
 BEGIN
     UPDATE users
     SET email_validation = 0
-    WHERE NEW.email != OLD.email
+    WHERE NEW.email != OLD.email;
 END;
 //
 DELIMITER ;
